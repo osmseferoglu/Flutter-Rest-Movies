@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, non_constant_identifier_names
+// ignore_for_file: file_names, non_constant_identifier_names, avoid_print
 
 import 'dart:ui';
 
@@ -46,8 +46,6 @@ void getMoviesData() async {
         title:  const Text("Movies DB"),
         backgroundColor: Colors.transparent,
         elevation: 0,
-       
-
       ),
       body: Stack(children: [
         Image.network(
@@ -72,7 +70,6 @@ void getMoviesData() async {
           : RefreshIndicator(
             
               child: ListView.builder(
-              
                 padding: const EdgeInsets.only(top: 120,left: 5,right: 5,bottom: 20),
                 itemCount: MoviesDataArray![0].results.length,
                 itemBuilder: (context, index) {
