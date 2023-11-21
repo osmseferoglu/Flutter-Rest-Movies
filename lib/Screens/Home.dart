@@ -82,15 +82,8 @@ void getMoviesData() async {
                         ),
                         title:
                             Text(MoviesDataArray![0].results[index].title),
-                        trailing: Column(
-                          children: [
-                            const Icon(Icons.star,
-                                color: Colors.yellow,
-                                shadows: [Shadow(blurRadius: 2)]),
-                            Text(
-                                '${MoviesDataArray![0].results[index].voteAverage}')
-                          ],
-                        ),
+                        trailing: 
+                            const Icon(Icons.chevron_right,),
                         onTap: () => {
                           Navigator.push(
                             context,
