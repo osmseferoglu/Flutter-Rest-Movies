@@ -1,7 +1,6 @@
 // ignore_for_file: file_names, non_constant_identifier_names, avoid_print
 
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:homework_flutter_rest_api/Constants.dart';
 import 'package:homework_flutter_rest_api/Model/DataModel.dart';
@@ -47,9 +46,10 @@ void getMoviesData() async {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: Stack(children: [
+      body: Stack(
+        children: [
         Image.network(
-              ApiConstants.getimageEndPoint(MoviesDataArray![0].results[0].backdropPath),
+              ApiConstants.getimageEndPoint(MoviesDataArray![0].results[0].posterPath),
               height: screenHeight,
               width: screenWidth,
               fit: BoxFit.cover,
@@ -109,8 +109,11 @@ void getMoviesData() async {
             ),
           
     
-      ],)
-      
+      ],),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        page++;
+        getMoviesData();
+      },child: Text(page.toString()),)
     );
   }
 }
