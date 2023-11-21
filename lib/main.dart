@@ -24,8 +24,9 @@ class _HomeState extends State<MyApp> {
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         /* dark theme settings */
+
       ),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.dark,
       /* ThemeMode.system to follow system theme, 
          ThemeMode.light for light theme, 
          ThemeMode.dark for dark theme
