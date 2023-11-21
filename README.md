@@ -2,6 +2,13 @@
 
 A new Flutter project.
 
+<!-- Gallery Start -->
+<p align="center">
+  <img src="https://i.ibb.co/Yc4ztxP/Simulator-Screenshot-i-Phone-15-Pro-2023-11-21-at-12-12-08.png" alt ="Home" width="200" />
+  <img src="https://i.ibb.co/VvSTJRT/Simulator-Screenshot-i-Phone-15-Pro-2023-11-21-at-12-00-16.png" alt="DetailView" width="200" />
+  <!-- Add more images as needed -->
+</p>
+<!-- Gallery End -->
 ## Getting Started
 
 This project is a starting point for a Flutter application.
