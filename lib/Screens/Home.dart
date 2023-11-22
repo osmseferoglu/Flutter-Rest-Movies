@@ -110,10 +110,12 @@ void getMoviesData() async {
           
     
       ],),
+      
       floatingActionButton: FloatingActionButton(onPressed: (){
         page++;
         getMoviesData();
-      },child: Text(page.toString()),)
+      },child: Text(page.toString()),),
+      
     );
   }
 }

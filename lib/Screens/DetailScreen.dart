@@ -23,7 +23,7 @@ class DetailPage extends StatelessWidget {
       body: Stack(
         children: [
           Image.network(
-            ApiConstants.getimageEndPoint(Movies.backdropPath),
+            ApiConstants.getimageEndPoint(Movies.backdropPath?? ""),
             height: screenHeight,
             width: screenWidth,
             fit: BoxFit.cover,
@@ -73,7 +73,7 @@ class DetailPage extends StatelessWidget {
                     Column(
                       children: [
                         Text(
-                          Movies.originalLanguage.name,
+                          Movies.originalLanguage,
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -120,7 +120,7 @@ class DetailPage extends StatelessWidget {
                         Row(
                           children: [
                             for (var i = 0;
-                                i < (Movies.voteAverage.toInt() / 2 );
+                                i < ((Movies.voteAverage) / 2 );
                                 i++)
                               const Icon(
                                 Icons.star,
@@ -138,7 +138,7 @@ class DetailPage extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                   child: Text(
-                    Movies.overview,
+                    Movies.overview?? "",
                     style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.normal,

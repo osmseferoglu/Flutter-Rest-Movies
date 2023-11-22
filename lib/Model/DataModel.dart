@@ -2,7 +2,7 @@
 //
 //     final moviesModel = moviesModelFromJson(jsonString);
 
-// ignore_for_file: file_names, constant_identifier_names
+// ignore_for_file: file_names
 
 import 'dart:convert';
 
@@ -42,12 +42,12 @@ class MoviesModel {
 
 class Result {
   bool adult;
-  String backdropPath;
+  String? backdropPath;
   List<int> genreIds;
   int id;
-  OriginalLanguage originalLanguage;
+  String originalLanguage;
   String originalTitle;
-  String overview;
+  String? overview;
   double popularity;
   String posterPath;
   DateTime releaseDate;
@@ -78,8 +78,7 @@ class Result {
         backdropPath: json["backdrop_path"],
         genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
         id: json["id"],
-        originalLanguage:
-            originalLanguageValues.map[json["original_language"]]!,
+        originalLanguage: json["original_language"],
         originalTitle: json["original_title"],
         overview: json["overview"],
         popularity: json["popularity"]?.toDouble(),
@@ -96,35 +95,15 @@ class Result {
         "backdrop_path": backdropPath,
         "genre_ids": List<dynamic>.from(genreIds.map((x) => x)),
         "id": id,
-        "original_language": originalLanguageValues.reverse[originalLanguage],
+        "original_language": originalLanguage,
         "original_title": originalTitle,
         "overview": overview,
         "popularity": popularity,
         "poster_path": posterPath,
-        "release_date":
-            "${releaseDate.year.toString().padLeft(4, '0')}-${releaseDate.month.toString().padLeft(2, '0')}-${releaseDate.day.toString().padLeft(2, '0')}",
+        "release_date": releaseDate,
         "title": title,
         "video": video,
         "vote_average": voteAverage,
         "vote_count": voteCount,
       };
-
-  
-}
-
-enum OriginalLanguage { EN, FR }
-
-final originalLanguageValues =
-    EnumValues({"en": OriginalLanguage.EN, "fr": OriginalLanguage.FR});
-
-class EnumValues<T> {
-  Map<String, T> map;
-  late Map<T, String> reverseMap;
-
-  EnumValues(this.map);
-
-  Map<T, String> get reverse {
-    reverseMap = map.map((k, v) => MapEntry(v, k));
-    return reverseMap;
-  }
 }

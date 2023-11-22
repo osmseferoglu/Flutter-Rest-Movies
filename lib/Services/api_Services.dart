@@ -16,8 +16,6 @@ class ApiService {
       if (response.statusCode == 200) {
         
         MoviesModel moviesModel = moviesModelFromJson(response.body);
-       
-
         return moviesModel;
       } 
     } catch (e) {
