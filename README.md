@@ -1,4 +1,4 @@
-# homework_flutter_rest_api
+# Flutter Movie Detail App
 
 A new Flutter project.
 
